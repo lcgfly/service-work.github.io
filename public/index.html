@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>sw</h1>
+  <button id="btn">获取基本信息</button>
+  <button id="btn2">当前在线人数</button>
+  <script type="text/javascript">
+    window.onload = function () {
+      navigator.serviceWorker.register('./sw.js').then(res => {
+        console.warn('service-worker is ready' + res.scope)
+      }).catch(e => console.error(e))
+    }
+  </script>
+  <script src="./fetch.js"></script>
+</body>
+
+</html>
